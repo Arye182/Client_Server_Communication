@@ -31,6 +31,10 @@ class State {
    */
   State(T state) {
     this->state = state;
+    this->high_score = 0;
+    this->is_visited = false;
+    this->came_from = nullptr;
+    this->cost = 0;
   }
 
   /**

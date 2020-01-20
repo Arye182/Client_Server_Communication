@@ -30,7 +30,11 @@ class Matrix {
 
 
   // getters and setters to everything?
-  
+  int getRowsNum();
+  int getColumnsNum();
+  vector<vector<State<Point>*>> getMatrixStateData();
+  State<Point>* getBeginState();
+  State<Point>* getGoalState();
 };
 
 #endif //CLIENT_SERVER_COMMUNICATION__MATRIX_H_

@@ -5,21 +5,21 @@
 #include "SearchableMatrix.h"
 
 State<Point> *SearchableMatrix::getInitialState() {
-  return nullptr;
+  return this->matrix->getBeginState();
 }
 
 
 State<Point> *SearchableMatrix::getGoalState() {
-  return nullptr;
+  return this->matrix->getGoalState();
 }
 
 
-bool SearchableMatrix::isGoalState(State<Point> *) {
-  return false;
+bool SearchableMatrix::isGoalState(State<Point>* other_state) {
+  return other_state == this->matrix->getGoalState();
 }
 
 
-vector<State<Point> *> SearchableMatrix::getAllPossibleStates(State<Point> *) {
+vector<State<Point> *> SearchableMatrix::getAllPossibleStates(State<Point>* other_state) {
   return vector<State<Point> *>();
 }
 
