@@ -7,6 +7,11 @@
 
 template<class T>
 class State {
+ private:
+
+
+
+ public:
 
 
 };
