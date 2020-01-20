@@ -27,6 +27,9 @@ class Matrix {
  public:
   Matrix(vector<vector<string>> matrix_data_to_lex_from_server);
   void buildMatrix();
+
+
+  // getters and setters to everything?
   
 };
 
