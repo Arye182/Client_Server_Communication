@@ -5,6 +5,7 @@
 #ifndef EX4__CLIENTHANDLER_H_
 #define EX4__CLIENTHANDLER_H_
 #include <iostream>
+#include <cstring>
 class ClientHandler {
  public:
   virtual void HandleClient(int i, int o);
