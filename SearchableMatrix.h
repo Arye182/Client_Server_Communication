@@ -17,10 +17,11 @@ using namespace std;
 class SearchableMatrix : public Searchable<Point> {
 
  private:
-  Matrix matrix;
+  Matrix *matrix;
 
 
  public:
+  SearchableMatrix(Matrix* m);
   State<Point> *getInitialState() override ;
   State<Point> *getGoalState() override ;
   bool isGoalState(State<Point>*) override ;

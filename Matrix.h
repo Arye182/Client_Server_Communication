@@ -20,12 +20,12 @@ class Matrix {
   int rows; // number of rows of the matrix
   int columns; // number of columns of the matrix
   vector<vector<State<Point>*>> matrix_state_data; // with points
-  vector<vector<string>> matrix_string_data;
+  vector<string> matrix_string_data;
   State<Point>* begin_state;
   State<Point>* goal_state;
   
  public:
-  Matrix(vector<vector<string>> matrix_data_to_lex_from_server);
+  Matrix(vector<string> matrix_data_to_lex_from_server);
   void buildMatrix();
 
 

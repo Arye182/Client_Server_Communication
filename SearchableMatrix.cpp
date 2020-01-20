@@ -7,13 +7,24 @@
 State<Point> *SearchableMatrix::getInitialState() {
   return nullptr;
 }
+
+
 State<Point> *SearchableMatrix::getGoalState() {
   return nullptr;
 }
+
+
 bool SearchableMatrix::isGoalState(State<Point> *) {
   return false;
 }
+
+
 vector<State<Point> *> SearchableMatrix::getAllPossibleStates(State<Point> *) {
   return vector<State<Point> *>();
+}
+
+
+SearchableMatrix::SearchableMatrix(Matrix *m) {
+  this->matrix = m;
 }
 
