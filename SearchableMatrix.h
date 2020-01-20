@@ -13,7 +13,7 @@
 #include <list>
 using namespace std;
 
-class SearchableMatrix : public Searchable<pair<double, double>> {
+class SearchableMatrix : public Searchable<Point> {
 
 
 
