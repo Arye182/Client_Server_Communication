@@ -5,15 +5,23 @@
 #ifndef CLIENT_SERVER_COMMUNICATION__STATE_H_
 #define CLIENT_SERVER_COMMUNICATION__STATE_H_
 
+
+/**
+ * this class - State class is actually the vertex of the graph it holds all
+ * the important info about the node / vertex....
+ *
+ *
+ * @tparam T
+ */
 template<class T>
 class State {
 
  private:
-  T state;
-  double cost;
-  State<T>* came_from;
+  T state; // practically it will be a Point (pair<int, int>) in this Ex.4
+  double cost; // the price!
+  State<T>* came_from; // for tracing back our path...
   bool is_visited;
-  double high_score;
+  double high_score; // A* heuristic
 
 
  public:
