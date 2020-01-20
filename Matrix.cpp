@@ -78,7 +78,7 @@ void Matrix::buildMatrix() {
       j++;
     }
     // update the columns
-    this->columns = j;
+    this->columns = j+1;
     // last element in the row
     if (k < size) {
       value = stod(row.substr(k, size));
