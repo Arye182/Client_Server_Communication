@@ -21,10 +21,10 @@ class SearchableMatrix : public Searchable<Point> {
 
 
  public:
-  virtual State<Point> *getInitialState() override ;
-  virtual State<Point> *getGoalState() override ;
-  virtual bool isGoalState(State<Point>*) override ;
-  virtual vector<State<Point>*> getAllPossibleStates(State<Point>*) override ;
+  State<Point> *getInitialState() override ;
+  State<Point> *getGoalState() override ;
+  bool isGoalState(State<Point>*) override ;
+  vector<State<Point>*> getAllPossibleStates(State<Point>*) override ;
 };
 
 #endif //CLIENT_SERVER_COMMUNICATION__SEARCHABLEMATRIX_H_
