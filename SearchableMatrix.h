@@ -26,6 +26,7 @@ class SearchableMatrix : public Searchable<Point> {
   State<Point> *getGoalState() override ;
   bool isGoalState(State<Point>* other_state) override ;
   vector<State<Point>*> getAllPossibleStates(State<Point>*  other_state) override ;
+  Matrix* getMatrix();
 };
 
 #endif //CLIENT_SERVER_COMMUNICATION__SEARCHABLEMATRIX_H_

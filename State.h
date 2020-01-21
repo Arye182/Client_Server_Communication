@@ -43,9 +43,7 @@ class State {
    * @return
    */
   bool operator == (const State<T> &s) {
-    return (s.came_from == came_from
-            && s.cost == cost
-            && s.state == state);
+    return (s.state == state);
   }
 
 //  State<T> &operator=(State<T> s) {

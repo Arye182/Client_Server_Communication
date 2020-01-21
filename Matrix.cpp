@@ -92,6 +92,10 @@ void Matrix::buildMatrix() {
     matrix_data_on_build.push_back(matrix_row);
   }
   this->matrix_state_data = matrix_data_on_build;
+  this->begin_state->setCost(matrix_data_on_build[this->begin_state->getState
+  ().first][this->begin_state->getState().second]->getCost());
+  this->goal_state->setCost(matrix_data_on_build[this->goal_state->getState
+      ().first][this->goal_state->getState().second]->getCost());
 }
 
 /**

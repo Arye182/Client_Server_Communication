@@ -17,6 +17,7 @@ class Searchable {
   virtual State<T> *getGoalState() = 0;
   virtual bool isGoalState(State<T>*  other_state) = 0;
   virtual vector<State<T>*> getAllPossibleStates(State<T>*  other_state) = 0;
+
 };
 
 
