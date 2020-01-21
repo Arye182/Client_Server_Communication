@@ -118,6 +118,15 @@ vector<State<Point> *> SearchableMatrix::getAllPossibleStates(State<Point>* othe
 Matrix *SearchableMatrix::getMatrix() {
   return this->matrix;
 }
+vector<State<Point> *> SearchableMatrix::backTracePath(State<Point> *goal_to_backtrace) {
+  State<Point>* iterator = goal_to_backtrace;
+  while(iterator->getCameFrom() != nullptr){
+    this->solution.push_back(iterator);
+    iterator = iterator->getCameFrom();
+  }
+  this->solution.push_back(iterator);
+  return this->solution;
+}
 
 
 

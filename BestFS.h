@@ -5,11 +5,8 @@
 #ifndef CLIENT_SERVER_COMMUNICATION__BESTFS_H_
 #define CLIENT_SERVER_COMMUNICATION__BESTFS_H_
 
-
-
 #include "Searcher.h"
 #include "Searchable.h"
-
 #include "SearchableMatrix.h"
 #include <string>
 #include <algorithm>
@@ -26,13 +23,13 @@ class BestFS : public Searcher<T> {
   vector<State<T>*> closed;
   vector<State<T>*> solution;
 
-
-
  public:
-
+  /**
+ *
+ */
   class myComparator {
    public:
-    int operator() (State<Point>* p1,  State<Point>* p2)
+    int operator() (State<T>* p1,  State<T>* p2)
     {
       return p1->getCost() > p2->getCost();
     }
@@ -44,10 +41,11 @@ class BestFS : public Searcher<T> {
    * @return
    */
   vector<State<T>*> search(Searchable<T> *searchable_obj) {
-    priority_queue <State<Point>*, vector<State<Point>*>, myComparator> open;
-    vector<State<Point>*> open_vector;
-    State<Point>* n;
-    vector<State<Point>*> successors;
+    SearchableMatrix *m = dynamic_cast<SearchableMatrix *>(searchable_obj);
+    priority_queue <State<T>*, vector<State<T>*>, myComparator> open;
+    vector<State<T>*> open_vector;
+    State<T>* n;
+    vector<State<T>*> successors;
     solution.clear();
     // OPEN = [initial state] // a priority queue of states to be evaluated
     open.push(searchable_obj->getInitialState());
@@ -59,6 +57,7 @@ class BestFS : public Searcher<T> {
       // 1. n  dequeue(OPEN) // Remove the best node from OPEN
       n = open.top();
       open.pop();
+      this->nodes_evaluated_counter++;
       auto best_open_vector = find(open_vector.begin(), open_vector.end(), n);
       open_vector.erase(best_open_vector);
       // 2. add(n,CLOSED) // so we won’t check n again
@@ -66,25 +65,21 @@ class BestFS : public Searcher<T> {
       // 3. If n is the goal state,
       if (searchable_obj->getGoalState()->getState() == n->getState()) {
         // backtrace path to n (through recorded parents) and return path.
-        State<Point>* iterator = n;
-        while(iterator != searchable_obj->getInitialState()){
-          this->solution.push_back(iterator);
-          iterator = iterator->getCameFrom();
-        }
-        return this->solution;
+        State<T>* iterator = n;
+        return m->backTracePath(iterator);
       }
       // 4. Create n's successors.
       successors = searchable_obj->getAllPossibleStates(n);
       // 5. For each successor s do:
-      for (State<Point>* s : successors) {
+      for (State<T>* s : successors) {
         bool s_is_in_open = false;
         bool s_is_in_closed = false;
-        for (State<Point>* state_in_open : open_vector) {
+        for (State<T>* state_in_open : open_vector) {
           if (state_in_open->getState() == s->getState()) {
             s_is_in_open = true;
           }
         }
-        for (State<Point>* state_in_close : this->closed) {
+        for (State<T>* state_in_close : this->closed) {
           if (state_in_close->getState() == s->getState()) {
             s_is_in_closed = true;
           }
@@ -103,8 +98,7 @@ class BestFS : public Searcher<T> {
         } else {
 
           // If there is a better path - update cost
-          SearchableMatrix
-              *m = dynamic_cast<SearchableMatrix *>(searchable_obj);
+
           double s_original_cost = m->getMatrix()->getMatrixStateData()
           [s->getState().first][s->getState().second]->getCost();
           double cost = n->getCost() + s_original_cost;

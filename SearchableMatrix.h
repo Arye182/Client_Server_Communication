@@ -18,7 +18,7 @@ class SearchableMatrix : public Searchable<Point> {
 
  private:
   Matrix *matrix;
-
+  vector<State<Point>*> solution;
 
  public:
   SearchableMatrix(Matrix* m);
@@ -27,6 +27,7 @@ class SearchableMatrix : public Searchable<Point> {
   bool isGoalState(State<Point>* other_state) override ;
   vector<State<Point>*> getAllPossibleStates(State<Point>*  other_state) override ;
   Matrix* getMatrix();
+  vector<State<Point>*> backTracePath (State<Point>* goal_to_backtrace);
 };
 
 #endif //CLIENT_SERVER_COMMUNICATION__SEARCHABLEMATRIX_H_
