@@ -8,6 +8,6 @@
 template <typename Problem, typename Solution>
 class Solver {
  public:
-  virtual Solution solve(Problem problem);
+  virtual Solution solve(Problem problem) = 0;
 };
 #endif //CLIENT_SERVER_COMMUNICATION__SOLVER_H_
