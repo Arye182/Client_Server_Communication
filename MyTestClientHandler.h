@@ -18,7 +18,10 @@ class MyTestClientHandler:public ClientHandler {
  private:
   Solver<string,string>* m_solver;
   CacheManager<string, string> *m_cm;
+  bool should_stop;
  public:
   MyTestClientHandler(Solver<string,string>* solver, CacheManager<string,string> *cm);
   virtual void HandleClient(int input_socket, int output_socket) override ;
+  string MyClientHandler::readFromClient(int socket);
+
 };
