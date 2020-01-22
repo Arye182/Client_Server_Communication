@@ -50,19 +50,19 @@ class DFS : public Searcher<T> {
       // pop the next vertex to work on
       State<T>* element = dfs_stack.top();
       dfs_stack.pop();
-
+      // check if it was visited
       for (State<T>* v1 : visited) {
         if (v1->getState() == element->getState()) {
           element->setIsVisited(true);
         }
       }
-
-
+      // if was not visited, mark visited
       if (!element->getIsVisited()) {
         element->setIsVisited(true);
         visited.push_back(element);
       }
       this->nodes_evaluated_counter++;
+      // get neighbours
       successors = searchable_obj->getAllPossibleStates(element);
       for (State<T>* s : successors){
         for (State<T>* v : visited) {
@@ -73,7 +73,8 @@ class DFS : public Searcher<T> {
         if (!s->getIsVisited()) {
           s->setCameFrom(element);
           s->setCost(element->getCost() + s->getCost());
-          //s->setIsVisited(true);
+          s->setIsVisited(true);
+          visited.push_back(s);
           dfs_stack.push(s);
         }
         // 3. If n is the goal state,

@@ -52,7 +52,11 @@ class BFS : public Searcher<T> {
         if (v1->getState() == element->getState()) {
           element->setIsVisited(true);
         }
+        if (v1->getState() == goal_state->getState()) {
+          return m->backTracePath(v1);
+        }
       }
+
 
       if (!element->getIsVisited()) {
         element->setIsVisited(true);
@@ -69,8 +73,9 @@ class BFS : public Searcher<T> {
         if (!s->getIsVisited()) {
           s->setCameFrom(element);
           s->setCost(element->getCost() + s->getCost());
-          //s->setIsVisited(true);
+          s->setIsVisited(true);
           bfs_queue.push(s);
+          visited.push_back(s);
         }
         // 3. If n is the goal state,
         if (goal_state->getState() == s->getState()) {

@@ -1,0 +1,114 @@
+commit f60ec26e279c8b95b72feac110fc6a96075e36d9
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Wed Jan 22 00:32:39 2020 +0200
+
+    BFS, DFS
+
+commit 39d193524e2696fb591bdf71a2430b021e77ddbf
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Tue Jan 21 05:27:19 2020 +0200
+
+    finished BestFS
+
+commit bd2252c43215b6eefa69ab57039cf569ea4f3cad
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Tue Jan 21 03:37:51 2020 +0200
+
+    changes and adding CacheManager.h, FileCacheManager.h
+
+commit f1bc02fcc6c6f83d190da7a51eacfebff4637785
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Tue Jan 21 00:03:16 2020 +0200
+
+    updating BestFS
+
+commit e5085592cdfdb83ed1ba47e87a76fbb140842225
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 17:59:24 2020 +0200
+
+    updating matrix, searchable, and searchable matrix
+
+commit 573dd62d143e1fe18e8fd1c8acb85149d5c5a556
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Mon Jan 20 17:12:33 2020 +0200
+
+    adding Solver interface and StringReverser class
+
+commit 72ac6634e0e8e4d0dea70ec15e7e03b2c084db0f
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 15:59:36 2020 +0200
+
+    added skeleton of my basic classes, interfaces ETC...
+
+commit f401ace6e18d78e31c8f6d3cd84249f5cd055146
+Merge: eebe3eb ecf98fc
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 15:59:17 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ecf98fc2dfc82e819bb1ffc25089c74507a2468b
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Mon Jan 20 15:58:56 2020 +0200
+
+    adding clientHandler interface, MySerialServer and MyTestClientHandler classes
+
+commit eebe3eb81def49da8cf6279855e3be4c6a61e499
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 04:40:40 2020 +0200
+
+    added skeleton of my basic classes, interfaces ETC...
+
+commit 9ce81c4f0961c417ca70a9a06ad9781ccb479925
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 04:21:59 2020 +0200
+
+    added skeleton of my basic classes, interfaces ETC...
+
+commit 92d9c2cfc118447198d5bf4203b50d6735e5d95b
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 04:02:00 2020 +0200
+
+    added skeleton of my basic classes, interfaces ETC...
+
+commit 4480fdca5f614d2d8df4dd9f3520199a34131514
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 03:55:09 2020 +0200
+
+    added skeleton of my basic classes, interfaces ETC...
+
+commit c6d29a1e65cf0f61fef9a60f6aabb991329f47e2
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Mon Jan 20 02:21:26 2020 +0200
+
+    added skeleton of my basic classes, interfaces ETC...
+
+commit 131f4c5a9aa5c7435bec3ba906d8589d1d086437
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 19 22:32:21 2020 +0200
+
+    adding initial searchable interface (template class) and State template class
+
+commit 3f7d4f635dab57ec12447d98b38c229e303b63a6
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sun Jan 19 00:41:41 2020 +0200
+
+    server interface update
+
+commit 2c7f100a5adaaaf31d250ed32a83a758347c29ce
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sun Jan 19 00:34:38 2020 +0200
+
+    server interface update
+
+commit 5d0b7f78e6e217b6e3e532f764e7a1a1d9331bb7
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sun Jan 19 00:31:03 2020 +0200
+
+    main update check
+
+commit 869230052d8f8b8c13b868827273875a1395dd0e
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 19 00:12:19 2020 +0200
+
+    Initial commit
