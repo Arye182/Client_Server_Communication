@@ -8,6 +8,6 @@
 #include <cstring>
 class ClientHandler {
  public:
-  virtual void HandleClient(int i, int o);
+  virtual void HandleClient(int i, int o) = 0;
 };
 #endif //EX4__CLIENTHANDLER_H_
