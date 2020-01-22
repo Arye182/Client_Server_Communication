@@ -15,6 +15,7 @@
 #include "StringReverser.h"
 #include "FileCacheManager.h"
 #include "MyTestClientHandler.h"
+#include "MyClientHandler.h"
 #define INPUT_BUFFER_SIZE 1024
 
 using namespace std;
@@ -52,9 +53,10 @@ namespace boot{
     static void main (char args[]){
       auto* server= new MySerialServer();
       StringReverser* s = new StringReverser();
-      auto* f_cm = new FileCacheManager();
-      MyTestClientHandler* test_client_handler = new MyTestClientHandler(s,f_cm);
-      server->open(5600, reinterpret_cast<ClientHandler*>(test_client_handler));
+      //auto* f_cm = new FileCacheManager();
+      //MyTestClientHandler* test_client_handler = new MyTestClientHandler(s,f_cm);
+      MyClientHandler* m = new MyClientHandler(nullptr, nullptr);
+      server->open(5600, reinterpret_cast<ClientHandler*>(m));
 
     }
   };

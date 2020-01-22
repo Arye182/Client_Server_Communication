@@ -7,12 +7,12 @@
 #include "CacheManager.h"
 #include <string>
 using namespace std;
-
- class FileCacheManager:public CacheManager<string, string>{
+template <typename Problem, typename Solution>
+ class FileCacheManager:public CacheManager<Problem, Solution>{
  public:
   FileCacheManager(){}
-  void insertSolution(string problem, string solution){}
-  string findSolution(string problem) override {
+  void insertSolution(Problem problem, Solution solution){}
+  Solution findSolution(Problem problem) override {
     return "not found";
   }
 
