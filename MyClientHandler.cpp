@@ -1,14 +1,15 @@
 //
 // Created by miri on 22.1.2020.
-#include "MyTestClientHandler.h"
+//
 
-MyTestClientHandler::MyTestClientHandler(Solver<string,string>* solver, CacheManager<string,string> *cm) {
-this->m_solver = solver;
-this->m_cm = cm;
+#include "MyClientHandler.h"
+
+MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver, CacheManager<SearchableMatrix,string>* cm){
+  this->m_solver = matrix_solver;
+  this->m_cm = cm;
 }
-
-void MyTestClientHandler::HandleClient(int input_socket, int output_socket) {
-  char buffer[INPUT_BUFFER_SIZE] = {0};
+void MyClientHandler::HandleClient(int i, int o) {
+  vector<string> matrix_data;
   string solution;
   //send to client
   int valread = read(input_socket, buffer, INPUT_BUFFER_SIZE);
@@ -19,6 +20,8 @@ void MyTestClientHandler::HandleClient(int input_socket, int output_socket) {
   string line(buffer, valread);
   while (line != "end") {
     //TODO
+    matrix_data.push_back(line);
+
     if (m_cm->findSolution(line) != "not found") {
       solution = m_cm->findSolution(line);
     } else {

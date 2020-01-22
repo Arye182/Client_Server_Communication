@@ -19,9 +19,6 @@ class MyTestClientHandler:public ClientHandler {
   Solver<string,string>* m_solver;
   CacheManager<string, string> *m_cm;
  public:
-  MyTestClientHandler(Solver<string,string>* solver, CacheManager<string,string> *cm) {
-    this->m_solver = solver;
-    this->m_cm = cm;
-  }
+  MyTestClientHandler(Solver<string,string>* solver, CacheManager<string,string> *cm);
   virtual void HandleClient(int input_socket, int output_socket) override ;
 };
