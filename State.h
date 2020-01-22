@@ -21,7 +21,7 @@ class State {
   double cost; // the price!
   State<T>* came_from; // for tracing back our path...
   bool is_visited;
-  double high_score; // A* heuristic
+  double heuristic_cost; // A* heuristic
 
 
  public:
@@ -31,7 +31,7 @@ class State {
    */
   State(T state) {
     this->state = state;
-    this->high_score = 0;
+    this->heuristic_cost = 0;
     this->is_visited = false;
     this->came_from = nullptr;
     this->cost = 0;
@@ -45,14 +45,6 @@ class State {
   bool operator == (const State<T> &s) {
     return (s.state == state);
   }
-
-//  State<T> &operator=(State<T> s) {
-//    this->node = s.getState();
-//    this->cost = s.getCost();
-//    this->come_from = s.getComeFrom();
-//    this->is_visited = false;
-//    return *this;
-//  }
 
   // getters
   /**
@@ -91,8 +83,8 @@ class State {
    *
    * @return
    */
-  double getHighScore() {
-   return this->high_score;
+  double getHeuristic() {
+   return this->heuristic_cost;
   }
 
   // setters
@@ -132,8 +124,8 @@ class State {
    *
    * @param new_high_score
    */
-  void setHighScore (double new_high_score) {
-    this->high_score = new_high_score;
+  void setHeuristic (double new_high_score) {
+    this->heuristic_cost = new_high_score;
   }
 };
 
