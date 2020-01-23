@@ -14,8 +14,12 @@ void MyMatrixCacheManager::insertSolution(string problem, string solution) {
   string key = to_string(hashed);
   fstream problem_to_insert_file;
   problem_to_insert_file.open(key);
+  if (!problem_to_insert_file) {
+    cerr << "could not open file of solution" << endl;
+  }
   problem_to_insert_file<< problem << endl;
   problem_to_insert_file << solution <<endl;
+  problem_to_insert_file.close();
 }
 /**
  * this method search if there is a solution exists, if so it returns it as a
@@ -36,6 +40,10 @@ string MyMatrixCacheManager::findSolution(string problem) {
     problem_to_search_file.close();
     return solution_from_file;
   } else {
+    if (problem_to_search_file.is_open()) {
+      problem_to_search_file.close();
+    }
+
     return "";
   }
 }
