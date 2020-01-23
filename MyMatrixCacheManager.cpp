@@ -13,6 +13,7 @@ void MyMatrixCacheManager::insertSolution(string problem, string solution) {
   auto hashed = this->hasher(problem);
   string key = to_string(hashed);
   fstream problem_to_insert_file;
+  problem_to_insert_file.open(key);
   problem_to_insert_file<< problem << endl;
   problem_to_insert_file << solution <<endl;
 }
