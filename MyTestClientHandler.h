@@ -22,6 +22,4 @@ class MyTestClientHandler:public ClientHandler {
  public:
   MyTestClientHandler(Solver<string,string>* solver, CacheManager<string,string> *cm);
   virtual void HandleClient(int input_socket, int output_socket) override ;
-  string MyClientHandler::readFromClient(int socket);
-
 };

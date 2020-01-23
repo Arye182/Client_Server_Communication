@@ -5,5 +5,13 @@
 #ifndef CLIENT_SERVER_COMMUNICATION__SEARCHEROBJECTADAPTER_H_
 #define CLIENT_SERVER_COMMUNICATION__SEARCHEROBJECTADAPTER_H_
 
-class Searcher
+#include "Solver.h"
+#include "SearchableMatrix.h"
+#include "Searcher.h"
+class SearcherObjectAdapter: Solver<SearchableMatrix*,string> {
+  Searcher<Point>* m_searcher;
+ public:
+  virtual string solve(SearchableMatrix* problem) override ;
+  string solutionConvertToString (vector<State<Point>*> solution_vector);
+};
 #endif //CLIENT_SERVER_COMMUNICATION__SEARCHEROBJECTADAPTER_H_
