@@ -43,74 +43,40 @@ void MyTestClientHandler::HandleClient(int input_socket, int output_socket) {
   }
 }
 
-string MyClientHandler::readFromClient(int socket) {
-  char buffer[INPUT_BUFFER_SIZE];
-  string full_input = "";
-  while (!(should_stop)) {
-    bzero(buffer, INPUT_BUFFER_SIZE);
-    int valread = read(socket, buffer, INPUT_BUFFER_SIZE);
-    if (valread < 0) {
-      cerr << "couldnot read from client" << endl;
-      exit(1);
-    }
-    string line(buffer, valread);
-    full_input = full_input + line;
-    if (line.find("end") < line.size()) {
-      this->should_stop = true;
-    }
-  }
-  cout<<full_input<<endl;
-  return full_input;
-}
-vector<string> MyClientHandler::input_vector(string input) {
-  vector<string> matrix_data;
-  int i = 0, index = 0, size;
-  string::size_type j;
-  size = input.size();
-  j = input.find("\n");
-  //seperte the input by "\n"
-  while (j != string::npos) {
-    matrix_data.push_back(input.substr(i, j));
-    cout<<matrix_data[index];
-    i = j + 2;
-    j = input.find("\n", i);
-    index++;
-  }
-  return matrix_data;
-}
+//string MyTestClientHandler::readFromClient(int socket) {
+//  char buffer[INPUT_BUFFER_SIZE];
+//  string full_input = "";
+//  while (!(should_stop)) {
+//    bzero(buffer, INPUT_BUFFER_SIZE);
+//    int valread = read(socket, buffer, INPUT_BUFFER_SIZE);
+//    if (valread < 0) {
+//      cerr << "couldnot read from client" << endl;
+//      exit(1);
+//    }
+//    string line(buffer, valread);
+//    full_input = full_input + line;
+//    if (line.find("end") < line.size()) {
+//      this->should_stop = true;
+//    }
+//  }
+//  cout<<full_input<<endl;
+//  return full_input;
+//}
+//vector<string> MyTestClientHandler::input_vector(string input) {
+//  vector<string> matrix_data;
+//  int i = 0, index = 0, size;
+//  string::size_type j;
+//  size = input.size();
+//  j = input.find("\n");
+//  //seperte the input by "\n"
+//  while (j != string::npos) {
+//    matrix_data.push_back(input.substr(i, j));
+//    cout<<matrix_data[index];
+//    i = j + 2;
+//    j = input.find("\n", i);
+//    index++;
+//  }
+//  return matrix_data;
+//}
 
-string MyClientHandler::readFromClient(int socket) {
-  char buffer[INPUT_BUFFER_SIZE];
-  string full_input = "";
-  while (!(should_stop)) {
-    bzero(buffer, INPUT_BUFFER_SIZE);
-    int valread = read(socket, buffer, INPUT_BUFFER_SIZE);
-    if (valread < 0) {
-      cerr << "couldnot read from client" << endl;
-      exit(1);
-    }
-    string line(buffer, valread);
-    full_input = full_input + line;
-    if (line.find("end") < line.size()) {
-      this->should_stop = true;
-    }
-  }
-  cout<<full_input<<endl;
-  return full_input;
-}
-vector<string> MyClientHandler::input_vector(string input) {
-  vector<string> matrix_data;
-  int i = 0, index = 0, size;
-  string::size_type j;
-  size = input.size();
-  j = input.find("\n");
-  //seperte the input by "\n"
-  while (j != string::npos) {
-    matrix_data.push_back(input.substr(i, j));
-    cout<<matrix_data[index];
-    i = j + 2;
-    j = input.find("\n", i);
-    index++;
-  }
-  return matrix_data;
-}
+
