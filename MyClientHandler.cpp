@@ -3,6 +3,7 @@
 //
 
 #include "MyClientHandler.h"
+#include<sstream>
 #define INPUT_BUFFER_SIZE 1024
 MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver, CacheManager<string,string>* cm){
   this->m_solver = matrix_solver;
@@ -15,14 +16,14 @@ void MyClientHandler::HandleClient(int i, int o) {
   //read problem from client
   string str_problem = this->readFromClient(i);
   //check for existing solution
-  //solution = m_cm->findSolution(str_problem);
+  solution = m_cm->findSolution(str_problem);
   //solve and insert to cache manager
-  //if (solution == "not found") {
+  if (solution == "") {
       matrix_data = input_vector(str_problem);
       SearchableMatrix *problem = new SearchableMatrix(new Matrix(matrix_data));
       solution = m_solver->solve(*problem);
-     // m_cm->insertSolution(str_problem, solution);
-   // }
+     m_cm->insertSolution(str_problem, solution);
+   }
     const char *c_solution = solution.c_str();
     //send to client
     int valwrite = static_cast<int>(write(i, c_solution, strlen(c_solution)));
@@ -53,17 +54,22 @@ string MyClientHandler::readFromClient(int socket) {
 }
   vector<string> MyClientHandler::input_vector(string input) {
     vector<string> matrix_data;
-    int i = 0, index = 0, size;
-    string::size_type j;
-    size = input.size();
-    j = input.find("\n");
-    //seperte the input by "\n"
-    while (j != string::npos) {
-      matrix_data.push_back(input.substr(i, j));
-      cout<<matrix_data[index];
-      i = j + 2;
-      j = input.find("\n", i);
-      index++;
+    string temp;
+    stringstream input_str_stream(input);
+    while(getline(input_str_stream,temp,'\n')) {
+      matrix_data.push_back(temp);
     }
+//    int i = 0, index = 0, size;
+//    string::size_type j;
+//    size = input.size();
+//    j = input.find('\n');
+    //seperte the input by "\n"
+//    while (j != string::npos) {
+//      matrix_data.push_back(input.substr(i, j));
+//      //cout<<matrix_data[index];
+//      i = j + 1;
+//      j = input.find('\n', i);
+//     // index++;
+//    }
     return matrix_data;
 }

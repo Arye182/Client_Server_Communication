@@ -13,11 +13,12 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include "StringReverser.h"
-#include "FileCacheManager.h"
+#include "MyMatrixCacheManager.h"
 #include "MyTestClientHandler.h"
 #include "MyClientHandler.h"
 #include "SearcherObjectAdapter.h"
 #include "Solver.h"
+#include "AStar.h"
 #define INPUT_BUFFER_SIZE 1024
 
 using namespace std;
@@ -55,10 +56,11 @@ namespace boot{
     static void main (char args[]){
       auto* server= new MySerialServer();
       StringReverser* s = new StringReverser();
-      //auto* f_cm = new FileCacheManager<string,string>();
+      auto* f_cm = new MyMatrixCacheManager();
       //MyTestClientHandler* test_client_handler = new MyTestClientHandler(s,f_cm);
-      SearcherObjectAdapter* oa = new SearcherObjectAdapter();
-      MyClientHandler* m = new MyClientHandler(reinterpret_cast<Solver<SearchableMatrix,string> *>(oa), nullptr);
+      AStar<Point>* searcher = new AStar<Point>();
+      SearcherObjectAdapter* oa = new SearcherObjectAdapter(searcher);
+      MyClientHandler* m = new MyClientHandler(reinterpret_cast<Solver<SearchableMatrix,string> *>(oa), f_cm);
       server->open(5600, reinterpret_cast<ClientHandler*>(m));
 
     }

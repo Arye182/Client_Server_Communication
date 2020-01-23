@@ -11,9 +11,10 @@
  */
 void MyMatrixCacheManager::insertSolution(string problem, string solution) {
   auto hashed = this->hasher(problem);
-  string key = to_string(hashed);
+  string key = to_string(hashed)+".txt";
   fstream problem_to_insert_file;
-  problem_to_insert_file.open(key);
+  cout << key << endl;
+  problem_to_insert_file.open(key, ios:: out );
   if (!problem_to_insert_file) {
     cerr << "could not open file of solution" << endl;
   }

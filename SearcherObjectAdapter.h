@@ -11,6 +11,9 @@
 class SearcherObjectAdapter: Solver<SearchableMatrix*,string> {
   Searcher<Point>* m_searcher;
  public:
+  SearcherObjectAdapter(Searcher<Point>* searcher){
+    this->m_searcher = searcher;
+  }
   virtual string solve(SearchableMatrix* problem) override ;
   string solutionConvertToString (vector<State<Point>*> solution_vector);
 };
