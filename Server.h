@@ -16,6 +16,8 @@
 #include "FileCacheManager.h"
 #include "MyTestClientHandler.h"
 #include "MyClientHandler.h"
+#include "SearcherObjectAdapter.h"
+#include "Solver.h"
 #define INPUT_BUFFER_SIZE 1024
 
 using namespace std;
@@ -53,9 +55,10 @@ namespace boot{
     static void main (char args[]){
       auto* server= new MySerialServer();
       StringReverser* s = new StringReverser();
-      //auto* f_cm = new FileCacheManager();
+      //auto* f_cm = new FileCacheManager<string,string>();
       //MyTestClientHandler* test_client_handler = new MyTestClientHandler(s,f_cm);
-      MyClientHandler* m = new MyClientHandler(nullptr, nullptr);
+      SearcherObjectAdapter* oa = new SearcherObjectAdapter();
+      MyClientHandler* m = new MyClientHandler(reinterpret_cast<Solver<SearchableMatrix,string> *>(oa), nullptr);
       server->open(5600, reinterpret_cast<ClientHandler*>(m));
 
     }

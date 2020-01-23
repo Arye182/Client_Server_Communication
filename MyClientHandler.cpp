@@ -15,14 +15,14 @@ void MyClientHandler::HandleClient(int i, int o) {
   //read problem from client
   string str_problem = this->readFromClient(i);
   //check for existing solution
-  solution = m_cm->findSolution(str_problem);
+  //solution = m_cm->findSolution(str_problem);
   //solve and insert to cache manager
-  if (solution == "not found") {
+  //if (solution == "not found") {
       matrix_data = input_vector(str_problem);
       SearchableMatrix *problem = new SearchableMatrix(new Matrix(matrix_data));
       solution = m_solver->solve(*problem);
-      m_cm->insertSolution(str_problem, solution);
-    }
+     // m_cm->insertSolution(str_problem, solution);
+   // }
     const char *c_solution = solution.c_str();
     //send to client
     int valwrite = static_cast<int>(write(i, c_solution, strlen(c_solution)));
