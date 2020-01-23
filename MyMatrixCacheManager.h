@@ -19,7 +19,7 @@ class MyMatrixCacheManager : public CacheManager<string, string> {
 
  public:
   MyMatrixCacheManager() = default;
-  ~MyMatrixCacheManager() override = default;
+  //~MyMatrixCacheManager() override = default;
   void insertSolution(string problem, string solution) override;
   string findSolution(string problem) override;
 };
