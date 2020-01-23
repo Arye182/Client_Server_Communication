@@ -12,6 +12,6 @@ class CacheManager{
   virtual Solution findSolution(Problem problem) = 0;
   virtual void loadingFile() = 0;
   virtual void writeToFile(Problem *problem, Solution *solution) = 0;
-  ~MyMatrixCacheManager() override;
+  virtual ~CacheManager() = 0;
 };
 #endif //CLIENT_SERVER_COMMUNICATION__CACHEMANAGER_H_
