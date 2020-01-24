@@ -37,6 +37,7 @@ void MySerialServer::open(int port, ClientHandler *c) {
   //open thread to connect clients
   std::thread serial_server_thread(&MySerialServer::start,this,&socketfd, c);
   serial_server_thread.join();
+  delete MySerialServer;
 }
 
 void MySerialServer::stop(int socket) {

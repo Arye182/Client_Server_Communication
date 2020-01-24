@@ -24,10 +24,6 @@
 using namespace std;
 
 namespace server_side {
-class ClientHandler {
- public:
-  virtual void HandleClient(int i, int o) = 0;
-};
 
 class Server {
 public:
@@ -50,6 +46,15 @@ class MySerialServer:public Server {
   void *start(int *socket, ClientHandler *c);
 };
 
+class MyParallelServer:public Server{
+  queue<thread> m_threads;
+ public:
+  virtual void open(int port, ClientHandler *c) override;
+  void acceptClients(int socket, ClientHandler* client_handler);
+  virtual void stop(int socket) override;
+  void* HandleClientAdapter(ClientHandler* c, int socket);
+  void join_threads();
+};
 namespace boot{
   class Main{
    public:
