@@ -12,6 +12,10 @@ SearchableMatrix::SearchableMatrix(Matrix *m) {
   this->matrix = m;
 }
 
+SearchableMatrix::SearchableMatrix(const SearchableMatrix* copy){
+  this->matrix = copy->matrix;
+}
+
 /**
  *
  * @return

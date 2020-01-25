@@ -14,6 +14,7 @@ MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver,
 MyClientHandler::MyClientHandler(const MyClientHandler* c) {
   this->m_solver = c->m_solver;
   this->m_cm = c->m_cm;
+  this->should_stop = c->should_stop;
 
 }
 void MyClientHandler::HandleClient(int i, int o) {

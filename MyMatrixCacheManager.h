@@ -19,6 +19,7 @@ class MyMatrixCacheManager : public CacheManager<string, string> {
 
  public:
   MyMatrixCacheManager() = default;
+  MyMatrixCacheManager(const MyMatrixCacheManager* copy_m_cm);
   //~MyMatrixCacheManager() override = default;
   void insertSolution(string problem, string solution) override;
   string findSolution(string problem) override;

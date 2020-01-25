@@ -22,6 +22,7 @@ class SearchableMatrix : public Searchable<Point> {
 
  public:
   SearchableMatrix(Matrix* m);
+  SearchableMatrix(const SearchableMatrix* copy);
   State<Point> *getInitialState() override ;
   State<Point> *getGoalState() override ;
   bool isGoalState(State<Point>* other_state) override ;

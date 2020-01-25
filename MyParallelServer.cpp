@@ -49,6 +49,7 @@ void MyParallelServer::acceptClients(int socket, ClientHandler* client_handler){
   }
   auto* temp_handler(client_handler);
   this->m_threads.push_back(thread(&MyParallelServer::HandleClientAdapter,this, temp_handler, client_socket));
+
   //this->m_threads.front().join();
   timeout_in_seconds = 120;
   tv.tv_sec = timeout_in_seconds;
@@ -66,10 +67,14 @@ void MyParallelServer::acceptClients(int socket, ClientHandler* client_handler){
     }
     auto* temp_handler(client_handler);
     //thread id(&MyParallelServer::HandleClientAdapter,this, temp_handler, socket);
-    this->m_threads.push_back(thread(&MyParallelServer::HandleClientAdapter,this, temp_handler, client_socket));
+    this->m_threads.push_back(thread (&MyParallelServer::HandleClientAdapter,this, temp_handler, client_socket));
+
     //to main thread
     //this->m_threads.back().join();
   }
+
+
+  this->stop(client_socket);
   this->stop(socket);
   //join
   join_threads();

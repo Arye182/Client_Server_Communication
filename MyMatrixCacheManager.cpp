@@ -4,6 +4,9 @@
 
 #include "MyMatrixCacheManager.h"
 
+MyMatrixCacheManager::MyMatrixCacheManager(const MyMatrixCacheManager* copy_m_cm) {
+  this->hasher = copy_m_cm->hasher;
+}
 /**
  * this method saves a solution ina file.
  * @param problem
