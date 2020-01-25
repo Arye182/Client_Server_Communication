@@ -5,7 +5,7 @@
 
 #include "MyClientHandler.h"
 #include<sstream>
-#define INPUT_BUFFER_SIZE 2048
+#define INPUT_BUFFER_SIZE 1024
 MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver, CacheManager<string,string>* cm){
   this->m_solver = matrix_solver;
   this->m_cm = cm;

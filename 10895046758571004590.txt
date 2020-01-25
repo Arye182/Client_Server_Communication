@@ -1,0 +1,1 @@
+Right(33), Right(38), Down(44), Down(58), Right(58), Right(58), Down(63), Right(73), Right(74), Right(78), Right(79), Down(83), Down(94), Down(99), Down(110), Right(112), Down(118), Down(133), Down(137), Right(143), Down(154), Down(160), Right(163), Right(163), Right(173), Right(173), Down(178), Down(185) 

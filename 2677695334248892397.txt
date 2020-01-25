@@ -1,0 +1,1 @@
+Left(13), Down(27), Left(34), Left(38), Left(47), Left(62), Left(70), Left(80), Up(80), Left(84), Left(89), Up(93), Left(95), Left(102), Left(111) 
