@@ -1,3 +1,4 @@
+#include "MyClientHandler.h"
 //
 // Created by miri on 22.1.2020.
 //
@@ -11,12 +12,17 @@ MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver,
   this->should_stop = false;
 }
 //ctor
-MyClientHandler::MyClientHandler(const MyClientHandler* c) {
-  this->m_solver = c->m_solver;
-  this->m_cm = c->m_cm;
-  this->should_stop = c->should_stop;
+//MyClientHandler::MyClientHandler(const MyClientHandler &c) {
+//  this->m_solver =c.m_solver;
+//  this->m_cm = c.m_cm;
+//  this->should_stop = c.should_stop;
+//
+//}
 
+MyClientHandler* MyClientHandler::deepCopy(){
+  return new MyClientHandler(this->m_solver->deepCopy(), this->m_cm);
 }
+
 void MyClientHandler::HandleClient(int i, int o) {
   vector<string> matrix_data;
   string solution;

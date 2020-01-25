@@ -47,7 +47,7 @@ void MyParallelServer::acceptClients(int socket, ClientHandler* client_handler){
     //stop(socket);
     return;
   }
-  auto* temp_handler(client_handler);
+  ClientHandler* temp_handler = client_handler->deepCopy();
   this->m_threads.push_back(thread(&MyParallelServer::HandleClientAdapter,this, temp_handler, client_socket));
 
   //this->m_threads.front().join();
@@ -65,7 +65,7 @@ void MyParallelServer::acceptClients(int socket, ClientHandler* client_handler){
       //stop(socket);
       break;
     }
-    auto* temp_handler(client_handler);
+     ClientHandler* temp_handler = client_handler->deepCopy();
     //thread id(&MyParallelServer::HandleClientAdapter,this, temp_handler, socket);
     this->m_threads.push_back(thread (&MyParallelServer::HandleClientAdapter,this, temp_handler, client_socket));
 

@@ -9,5 +9,6 @@
 class ClientHandler {
  public:
   virtual void HandleClient(int i, int o) = 0;
+  virtual ClientHandler* deepCopy() = 0;
 };
 #endif //EX4__CLIENTHANDLER_H_

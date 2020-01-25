@@ -39,8 +39,13 @@ class AStar : public Searcher<T> {
   AStar() {
   }
 //ctor
-  AStar(const AStar<Point>* a) {
-    this->goal_state = a->goal_state;
+  AStar(const AStar<Point>&a) {
+    this->goal_state = a.goal_state;
+  }
+
+  virtual AStar<T>* deepCopy() override {
+    AStar<T>* copy = new AStar<T>();
+    return copy;
   }
   /**
    *

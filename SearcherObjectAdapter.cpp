@@ -8,7 +8,9 @@ using namespace std;
  string SearcherObjectAdapter::solve(SearchableMatrix* problem) {
   return solutionConvertToString(this->m_searcher->search(problem));
 }
-
+SearcherObjectAdapter* SearcherObjectAdapter::deepCopy()  {
+   return new SearcherObjectAdapter(this->m_searcher->deepCopy());
+ }
 string SearcherObjectAdapter::solutionConvertToString (vector<State<Point>*> solution_vector) {
   // format: Down (12) ,Down (13) ,Right (18)
   string string_solution = "";

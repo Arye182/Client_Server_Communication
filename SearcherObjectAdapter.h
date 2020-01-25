@@ -11,12 +11,13 @@
 class SearcherObjectAdapter: Solver<SearchableMatrix*,string> {
   Searcher<Point>* m_searcher;
  public:
-  SearcherObjectAdapter(const SearcherObjectAdapter* so) {
-    this->m_searcher = so->m_searcher;
-  }
+//  SearcherObjectAdapter(const SearcherObjectAdapter* so) {
+//    this->m_searcher = so->m_searcher;
+//  }
   SearcherObjectAdapter(Searcher<Point>* searcher){
     this->m_searcher = searcher;
   }
+  virtual SearcherObjectAdapter* deepCopy() override ;
   virtual string solve(SearchableMatrix* problem) override ;
   string solutionConvertToString (vector<State<Point>*> solution_vector);
 };

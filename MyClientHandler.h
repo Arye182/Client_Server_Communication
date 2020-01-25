@@ -24,8 +24,9 @@ class MyClientHandler:public ClientHandler{
   bool should_stop;
  public:
   //ctor
-  MyClientHandler(const MyClientHandler* c);
+  MyClientHandler(const MyClientHandler &c);
   MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver, CacheManager<string,string>* cm);
+  virtual MyClientHandler* deepCopy() override ;
   virtual void HandleClient(int i, int o) override;
   string readFromClient(int socket);
   vector<string> input_vector(string input);
