@@ -36,7 +36,9 @@ class State {
     this->came_from = nullptr;
     this->cost = 0;
   }
-
+  State(const State* S){
+    this->came_from = S->came_from;
+  }
   /**
    *
    * @param s

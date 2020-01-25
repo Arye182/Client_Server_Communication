@@ -10,6 +10,12 @@ MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver,
   this->m_cm = cm;
   this->should_stop = false;
 }
+//ctor
+MyClientHandler::MyClientHandler(const MyClientHandler* c) {
+  this->m_solver = c->m_solver;
+  this->m_cm = c->m_cm;
+
+}
 void MyClientHandler::HandleClient(int i, int o) {
   vector<string> matrix_data;
   string solution;
@@ -37,7 +43,7 @@ string MyClientHandler::readFromClient(int socket) {
   char buffer[INPUT_BUFFER_SIZE];
   string full_input = "";
   while (!(should_stop)) {
-    bzero(buffer, INPUT_BUFFER_SIZE);
+
     int valread = read(socket, buffer, INPUT_BUFFER_SIZE);
     if (valread < 0) {
       cerr << "couldnot read from client" << endl;
@@ -45,6 +51,7 @@ string MyClientHandler::readFromClient(int socket) {
     }
     string line(buffer, valread);
     full_input = full_input + line;
+    bzero(buffer, INPUT_BUFFER_SIZE);
     if (line.find("end") < line.size()) {
       this->should_stop = true;
     }

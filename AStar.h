@@ -35,7 +35,13 @@ class AStar : public Searcher<T> {
       return p1->getHeuristic() > p2->getHeuristic();
     }
   };
-
+  //constructor
+  AStar() {
+  }
+//ctor
+  AStar(const AStar<Point>* a) {
+    this->goal_state = a->goal_state;
+  }
   /**
    *
    * @param searchable_obj

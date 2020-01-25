@@ -47,8 +47,11 @@ class MySerialServer:public Server {
 };
 
 class MyParallelServer:public Server{
-  queue<thread> m_threads;
+  list<thread> m_threads;
  public:
+  //todo
+  MyParallelServer(){
+  }
   virtual void open(int port, ClientHandler *c) override;
   void acceptClients(int socket, ClientHandler* client_handler);
   virtual void stop(int socket) override;
@@ -59,15 +62,13 @@ namespace boot{
   class Main{
    public:
     static void main (char args[]){
-      auto* server= new MySerialServer();
-      StringReverser* s = new StringReverser();
+      auto* server= new MyParallelServer();
       auto* f_cm = new MyMatrixCacheManager();
       //MyTestClientHandler* test_client_handler = new MyTestClientHandler(s,f_cm);
       AStar<Point>* searcher = new AStar<Point>();
       SearcherObjectAdapter* oa = new SearcherObjectAdapter(searcher);
       MyClientHandler* m = new MyClientHandler(reinterpret_cast<Solver<SearchableMatrix,string> *>(oa), f_cm);
       server->open(5600, reinterpret_cast<ClientHandler*>(m));
-
     }
   };
 };

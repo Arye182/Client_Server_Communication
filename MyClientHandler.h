@@ -23,6 +23,8 @@ class MyClientHandler:public ClientHandler{
   CacheManager<string,string>* m_cm;
   bool should_stop;
  public:
+  //ctor
+  MyClientHandler(const MyClientHandler* c);
   MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver, CacheManager<string,string>* cm);
   virtual void HandleClient(int i, int o) override;
   string readFromClient(int socket);

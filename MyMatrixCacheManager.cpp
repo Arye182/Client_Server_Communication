@@ -14,12 +14,14 @@ void MyMatrixCacheManager::insertSolution(string problem, string solution) {
   string key = to_string(hashed)+".txt";
   fstream problem_to_insert_file;
   cout << key << endl;
+  lock_cache.lock();
   problem_to_insert_file.open(key, ios:: out );
   if (!problem_to_insert_file) {
     cerr << "could not open file of solution" << endl;
   }
   problem_to_insert_file << solution <<endl;
   problem_to_insert_file.close();
+  lock_cache.unlock();
 }
 /**
  * this method search if there is a solution exists, if so it returns it as a

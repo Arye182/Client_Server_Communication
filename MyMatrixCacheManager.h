@@ -9,10 +9,10 @@
 #include <iostream>
 #include <map>
 #include <fstream>
-#include "CacheManager.h"
+#include <mutex>
 
 using namespace std;
-
+static mutex lock_cache;
 class MyMatrixCacheManager : public CacheManager<string, string> {
  private:
   hash < string > hasher;
