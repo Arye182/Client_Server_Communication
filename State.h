@@ -37,7 +37,11 @@ class State {
     this->cost = 0;
   }
   State(const State* S){
-    this->came_from = S->came_from;
+    this->state = S->getState();
+    this->heuristic_cost = 0;
+    this->is_visited = false;
+    this->cost = 0;
+   this->came_from = S->getCameFrom();
   }
   /**
    *

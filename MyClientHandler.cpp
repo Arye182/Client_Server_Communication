@@ -4,7 +4,7 @@
 
 #include "MyClientHandler.h"
 #include<sstream>
-#define INPUT_BUFFER_SIZE 1024
+#define INPUT_BUFFER_SIZE 2048
 MyClientHandler::MyClientHandler(Solver<SearchableMatrix,string>* matrix_solver, CacheManager<string,string>* cm){
   this->m_solver = matrix_solver;
   this->m_cm = cm;
@@ -48,7 +48,7 @@ string MyClientHandler::readFromClient(int socket) {
     if (valread < 0) {
       cerr << "couldnot read from client" << endl;
       exit(1);
-    }
+   }
     string line(buffer, valread);
     full_input = full_input + line;
     bzero(buffer, INPUT_BUFFER_SIZE);
@@ -56,7 +56,7 @@ string MyClientHandler::readFromClient(int socket) {
       this->should_stop = true;
     }
   }
-  cout<<full_input<<endl;
+  //cout<<full_input<<endl;
   return full_input;
 }
   vector<string> MyClientHandler::input_vector(string input) {

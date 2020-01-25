@@ -26,8 +26,9 @@ class Matrix {
   
  public:
   Matrix(vector<string> matrix_data_to_lex_from_server);
+  Matrix(const Matrix* copy_matrix);
   void buildMatrix();
-
+  vector<string>getData();
 
   // getters and setters to everything?
   int getRowsNum();

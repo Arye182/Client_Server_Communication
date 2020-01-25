@@ -15,6 +15,11 @@ Matrix::Matrix(vector<string> data_to_lex) {
   this->rows = data_to_lex.size()-3;
 }
 
+Matrix::Matrix(const Matrix* copy_matrix){
+  this->matrix_string_data = copy_matrix->matrix_string_data;
+  this->buildMatrix();
+  this->rows = matrix_string_data.size()-3;
+}
 /**
  *
  */
@@ -136,6 +141,10 @@ State<Point> *Matrix::getBeginState() {
  */
 State<Point> *Matrix::getGoalState() {
   return this->goal_state;
+}
+
+vector<string>Matrix::getData() {
+  return this->matrix_string_data;
 }
 
 

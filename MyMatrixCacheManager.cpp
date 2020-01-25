@@ -14,7 +14,7 @@ void MyMatrixCacheManager::insertSolution(string problem, string solution) {
   string key = to_string(hashed)+".txt";
   fstream problem_to_insert_file;
   cout << key << endl;
-  lock_cache.lock();
+  lock_cache.try_lock();
   problem_to_insert_file.open(key, ios:: out );
   if (!problem_to_insert_file) {
     cerr << "could not open file of solution" << endl;
@@ -30,6 +30,7 @@ void MyMatrixCacheManager::insertSolution(string problem, string solution) {
  * @return
  */
 string MyMatrixCacheManager::findSolution(string problem) {
+  lock_cache.try_lock();
   auto hashed = this->hasher(problem);
   string key = to_string(hashed)+".txt";
   fstream problem_to_search_file;
@@ -40,13 +41,15 @@ string MyMatrixCacheManager::findSolution(string problem) {
     //getline(problem_to_search_file, problem_from_file);
     getline(problem_to_search_file, solution_from_file);
     problem_to_search_file.close();
+    lock_cache.unlock();
     return solution_from_file;
   } else {
     if (problem_to_search_file.is_open()) {
       problem_to_search_file.close();
     }
-
+    lock_cache.unlock();
     return "";
+
   }
 }
 
