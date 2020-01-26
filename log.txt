@@ -1,3 +1,206 @@
+commit 3258991c75c77135c882a8e5730ee0f5009b8b6a
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 03:47:22 2020 +0200
+
+    Coding Style
+
+commit 12a7e6ffb075f475110064e3c08f591554bde7ed
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 03:10:17 2020 +0200
+
+    Coding Style
+
+commit 667703119ca16d77e8d483193169067d26d0bc19
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sun Jan 26 01:49:22 2020 +0200
+
+    update
+
+commit 512b79e8d55a68aaaac28b854dfa8323d55a36e4
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sun Jan 26 01:45:51 2020 +0200
+
+    working varsion after 10 clients test
+
+commit db9e44a191086628f4b2016515030a302faff42d
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sat Jan 25 23:57:17 2020 +0200
+
+    test
+
+commit d3e5f85a05bb8b38b00c3af91e63be1248a0c89f
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sat Jan 25 23:22:52 2020 +0200
+
+    test
+
+commit 7702baaa2161005bc300a86bcd836313a7da8ca6
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Sat Jan 25 20:05:59 2020 +0200
+
+    updates
+
+commit a038f0074474daf3f333945bded411f3f16f44c8
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Fri Jan 24 08:37:23 2020 +0200
+
+    updates
+
+commit 04ce0bbe9ab264e7f0fba768ee2eba5d62cb4ea7
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 20:17:37 2020 +0200
+
+    adding MyParallelServer class
+
+commit fb7a79ff1d1f8b519a2b7cb7031758ad23d7f392
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 20:01:16 2020 +0200
+
+    updated chace manager and created my matrix cache manager
+
+commit 62ee45cd23b587ee25fc086339d077e83c8c52d9
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 19:42:58 2020 +0200
+
+    test
+
+commit 3b724210d2ef7cba52f7dfda43ed3d5e3d97f4d2
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 19:34:09 2020 +0200
+
+    update cache data and MySerialServer.cpp
+
+commit 71c97bf6089319232ee67a318edd221ac2b6bb79
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 17:54:04 2020 +0200
+
+    update test
+
+commit c1a8cdd5efb316753b5c34b5a254da3f3267ca67
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 16:49:59 2020 +0200
+
+    updated chace manager and created my matrix cache manager
+
+commit a730a841b746b56ce5cfc973d9d7716a8813c3ee
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 16:45:04 2020 +0200
+
+    updated chace manager and created my matrix cache manager
+
+commit 2e75084511a2119ed2b28959ee363828f372fe16
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 16:40:03 2020 +0200
+
+    updated chace manager and created my matrix cache manager
+
+commit 577cdaab4b3d9ccfb8c2c9374e7425feaba9e491
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 16:37:11 2020 +0200
+
+    updated chace manager and created my matrix cache manager
+
+commit 3e51ee2e708f97ae486c2d28e3f6e0365e764a1c
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 16:16:00 2020 +0200
+
+    updated chace manager and created my matrix cache manager
+
+commit 023d6ef50669f813048b8ac0714ece996395b5f5
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 16:07:33 2020 +0200
+
+    update test
+
+commit f896c5115609c8179aa888a7f806b50b4027e308
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 15:43:11 2020 +0200
+
+    updates
+
+commit 197ba9113e6294aa2a663475b6d4db17c5e80743
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 02:35:14 2020 +0200
+
+    added empiric results pdf
+
+commit 0330cdcdd1b6909a9af43bf117082af13e9edf48
+Merge: f39df09 ab623e1
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 02:34:27 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ab623e1f2118954348ca6bff3f9f1e31365df765
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 02:25:08 2020 +0200
+
+    adding SearcherObjectAdapter class
+
+commit f39df09883a2317b31134acb920b59c1364be70d
+Merge: c012063 8910aaf
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 01:32:05 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8910aaf6f8f64acfa49824b0be1554d038c7498d
+Author: Arye <44327427+Arye182@users.noreply.github.com>
+Date:   Thu Jan 23 01:31:48 2020 +0200
+
+    readme
+    
+    readme
+
+commit c012063b17190964236dfc0bcc6702d8f7f50407
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 01:24:23 2020 +0200
+
+    added empiric results pdf
+
+commit 849e8ecf12396a8c4ea540aead7acdb777a3bde5
+Merge: 9036807 db70b6e
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 01:21:56 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit db70b6e41e9eab6a47c5305e9908e20fb73600ea
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Thu Jan 23 01:20:34 2020 +0200
+
+    updates in communication classes
+
+commit 9036807322a9694c0c05bc86b4847d466a35ff74
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Thu Jan 23 01:18:20 2020 +0200
+
+    added readmefile
+
+commit 806f929e24542fb00d8fe5471519c2a6d85b7765
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Wed Jan 22 22:07:32 2020 +0200
+
+    added the empiric results in txt files. finished the empiric experiment. added ASTAR ALGO.
+
+commit 8f9d88920c77c1529e5e9e77a07824bb147fbf46
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Wed Jan 22 17:06:06 2020 +0200
+
+    changes
+
+commit ba5f91c4d9523b8a77822bf674939c8a087d0077
+Author: miriyungreis4121 <miriyungreis@gmail.com>
+Date:   Wed Jan 22 14:47:42 2020 +0200
+
+    changes in files: ClientHandler.h, MyTestClientHandler.h, Server.h and adding MySerialServer.cpp, MyTestClientHandler.cpp
+
+commit fbf0b10cdf52ee76c53fec77f4a388d5e303daa3
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Wed Jan 22 05:19:17 2020 +0200
+
+    added the empiric matrices and meanwhile i am not uploading the empiric test cuz it has main i will add it in the end.
+
 commit f60ec26e279c8b95b72feac110fc6a96075e36d9
 Author: Arye182 <arye.amsalem@gmail.com>
 Date:   Wed Jan 22 00:32:39 2020 +0200
