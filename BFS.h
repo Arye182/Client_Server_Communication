@@ -89,11 +89,6 @@ class BFS : public Searcher<T> {
   }
 
   /**
-   * DCtor.
-   */
-  ~BFS() = default;
-
-  /**
    *
    * @return
    */

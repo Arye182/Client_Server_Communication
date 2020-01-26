@@ -42,11 +42,6 @@ class AStar : public Searcher<T> {
   AStar() {}
 
   /**
-   * DCtor.
-   */
-  ~AStar() = default;
-
-  /**
    * deep copy implementation for a-star.
    * @return
    */

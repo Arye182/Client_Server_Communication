@@ -15,12 +15,10 @@ using namespace std;
 static mutex lock_cache;
 class MyMatrixCacheManager : public CacheManager<string, string> {
  private:
-  hash < string > hasher;
+  hash<string> hasher;
 
  public:
   MyMatrixCacheManager() = default;
-  MyMatrixCacheManager(const MyMatrixCacheManager* copy_m_cm);
-  //~MyMatrixCacheManager() override = default;
   void insertSolution(string problem, string solution) override;
   string findSolution(string problem) override;
 };

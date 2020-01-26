@@ -24,11 +24,6 @@ class DFS : public Searcher<T> {
  public:
 
   /**
-   * DCtor.
-   */
-  ~DFS() = default;
-
-  /**
    * the algorithm DFS
    * @param searchable_obj
    * @return

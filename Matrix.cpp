@@ -143,4 +143,26 @@ vector<string> Matrix::getData() {
   return this->matrix_string_data;
 }
 
+/**
+ * DCtor.
+ */
+Matrix::~Matrix() {
+  for (vector<State<Point>*> v : this->matrix_state_data) {
+    for (State<Point>* s : v) {
+      if (s != nullptr) {
+        delete (s);
+        s = nullptr;
+      }
+    }
+  }
+  if (this->begin_state != nullptr) {
+    delete (this->begin_state);
+    this->begin_state = nullptr;
+  }
+  if (this->goal_state != nullptr) {
+    delete (this->goal_state);
+    this->goal_state = nullptr;
+  }
+}
+
 

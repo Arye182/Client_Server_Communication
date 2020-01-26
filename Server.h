@@ -2,7 +2,6 @@
 // Created by miri on 18.1.2020.
 //
 
-
 #include <iostream>
 #include <string>
 #include <thread>
@@ -23,15 +22,18 @@
 
 using namespace std;
 
+/**
+ *
+ */
 namespace server_side {
 
 class Server {
-public:
+ public:
   /*
    * @param port
    * open the server and wait to client
    */
-  virtual void open(int port, ClientHandler* c) = 0;
+  virtual void open(int port, ClientHandler *c) = 0;
   /*
    * close the server
    */
@@ -39,38 +41,49 @@ public:
 
 };
 
-class MySerialServer:public Server {
+/**
+ *
+ */
+class MySerialServer : public Server {
  public:
-  virtual void open(int port, ClientHandler *c) override;
-  virtual void stop(int socket) override;
+  void open(int port, ClientHandler *c) override;
+  void stop(int socket) override;
   void *start(int *socket, ClientHandler *c);
 };
 
-class MyParallelServer:public Server{
+/**
+ *
+ */
+class MyParallelServer : public Server {
   list<thread> m_threads;
  public:
-  //todo
-  MyParallelServer(){
-  }
-  virtual void open(int port, ClientHandler *c) override;
-  void acceptClients(int socket, ClientHandler* client_handler);
-  virtual void stop(int socket) override;
-  void* HandleClientAdapter(ClientHandler* c, int socket);
+  MyParallelServer() = default;
+  void open(int port, ClientHandler *c) override;
+  void acceptClients(int socket, ClientHandler *client_handler);
+  void stop(int socket) override;
+  void *HandleClientAdapter(ClientHandler *c, int socket);
   void join_threads();
 };
-namespace boot{
-  class Main{
-   public:
-    static void main (char args[]){
-      auto* server= new MyParallelServer();
-      auto* f_cm = new MyMatrixCacheManager();
-      //MyTestClientHandler* test_client_handler = new MyTestClientHandler(s,f_cm);
-      AStar<Point>* searcher = new AStar<Point>();
-      SearcherObjectAdapter* oa = new SearcherObjectAdapter(searcher);
-      MyClientHandler* m = new MyClientHandler(reinterpret_cast<Solver<SearchableMatrix,string> *>(oa), f_cm);
-      server->open(5600, reinterpret_cast<ClientHandler*>(m));
-    }
-  };
+
+/**
+ *
+ */
+namespace boot {
+/**
+ *
+ */
+class Main {
+ public:
+  static void main(char args[]) {
+    auto *server = new MyParallelServer();
+    auto *f_cm = new MyMatrixCacheManager();
+    AStar<Point> *searcher = new AStar<Point>();
+    SearcherObjectAdapter *oa = new SearcherObjectAdapter(searcher);
+    MyClientHandler *m = new MyClientHandler(reinterpret_cast<Solver<
+        SearchableMatrix, string> *>(oa), f_cm);
+    server->open(5600, reinterpret_cast<ClientHandler *>(m));
+  }
+};
 };
 };
 

@@ -5,10 +5,10 @@
 #ifndef CLIENT_SERVER_COMMUNICATION__SOLVER_H_
 #define CLIENT_SERVER_COMMUNICATION__SOLVER_H_
 
-template <typename Problem, typename Solution>
+template<typename Problem, typename Solution>
 class Solver {
  public:
-  virtual Solver*deepCopy() = 0;
+  virtual Solver *deepCopy() = 0;
   virtual Solution solve(Problem problem) = 0;
 };
 #endif //CLIENT_SERVER_COMMUNICATION__SOLVER_H_

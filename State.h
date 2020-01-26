@@ -5,7 +5,6 @@
 #ifndef CLIENT_SERVER_COMMUNICATION__STATE_H_
 #define CLIENT_SERVER_COMMUNICATION__STATE_H_
 
-
 /**
  * this class - State class is actually the vertex of the graph it holds all
  * the important info about the node / vertex....
@@ -19,10 +18,9 @@ class State {
  private:
   T state; // practically it will be a Point (pair<int, int>) in this Ex.4
   double cost; // the price!
-  State<T>* came_from; // for tracing back our path...
+  State<T> *came_from; // for tracing back our path...
   bool is_visited;
   double heuristic_cost; // A* heuristic
-
 
  public:
   /**
@@ -36,19 +34,13 @@ class State {
     this->came_from = nullptr;
     this->cost = 0;
   }
-  State(const State* S){
-    this->state = S->getState();
-    this->heuristic_cost = 0;
-    this->is_visited = false;
-    this->cost = 0;
-   this->came_from = S->getCameFrom();
-  }
+
   /**
    *
    * @param s
    * @return
    */
-  bool operator == (const State<T> &s) {
+  bool operator==(const State<T> &s) {
     return (s.state == state);
   }
 
@@ -66,14 +58,14 @@ class State {
    * @return
    */
   double getCost() {
-   return this->cost;
+    return this->cost;
   }
 
   /**
    *
    * @return
    */
-  State<T>* getCameFrom() {
+  State<T> *getCameFrom() {
     return this->came_from;
   }
 
@@ -82,7 +74,7 @@ class State {
    * @return
    */
   bool getIsVisited() {
-    return  this->is_visited;
+    return this->is_visited;
   }
 
   /**
@@ -90,7 +82,7 @@ class State {
    * @return
    */
   double getHeuristic() {
-   return this->heuristic_cost;
+    return this->heuristic_cost;
   }
 
   // setters
@@ -98,7 +90,7 @@ class State {
    *
    * @param new_state
    */
-  void setState (T new_state) {
+  void setState(T new_state) {
     this->state = new_state;
   }
 
@@ -106,7 +98,7 @@ class State {
    *
    * @param new_cost
    */
-  void setCost (double new_cost) {
+  void setCost(double new_cost) {
     this->cost = new_cost;
   }
 
@@ -114,7 +106,7 @@ class State {
    *
    * @param new_came_from
    */
-  void setCameFrom(State<T>* new_came_from){
+  void setCameFrom(State<T> *new_came_from) {
     this->came_from = new_came_from;
   }
 
@@ -130,10 +122,9 @@ class State {
    *
    * @param new_high_score
    */
-  void setHeuristic (double new_high_score) {
+  void setHeuristic(double new_high_score) {
     this->heuristic_cost = new_high_score;
   }
 };
-
 
 #endif //CLIENT_SERVER_COMMUNICATION__STATE_H_

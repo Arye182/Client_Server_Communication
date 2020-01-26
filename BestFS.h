@@ -34,11 +34,6 @@ class BestFS : public Searcher<T> {
   };
 
   /**
-   * DCtor.
-   */
-  ~BestFS() = default;
-
-  /**
    * the algorithm.
    * @param searchable_obj
    * @return the solution (in vector of states)

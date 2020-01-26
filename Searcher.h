@@ -16,7 +16,7 @@ class Searcher {
   virtual std::vector<State<T>*> search(Searchable<T> *searchable_obj) = 0;
   virtual int getNumberOfNodesEvaluated() = 0;
   virtual Searcher<T>* deepCopy() = 0;
-  virtual ~Searcher() = 0;
+  virtual ~Searcher() = default;
 };
 
 #endif //CLIENT_SERVER_COMMUNICATION__SEARCHER_H_
