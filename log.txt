@@ -1,3 +1,40 @@
+commit 3d12de239fa38b29a9d8ffc03e72ab1e9bf8d506
+Merge: 29a4cd4 d121feb
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 05:07:35 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d121feb3182bda65a550d2be73033e31564c3611
+Author: Arye <44327427+Arye182@users.noreply.github.com>
+Date:   Sun Jan 26 05:07:22 2020 +0200
+
+    Update README.md
+
+commit 29a4cd433b751dc6df5f0823385c20fb5c5eae15
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 05:05:42 2020 +0200
+
+    Coding Style
+
+commit 68edb273252f113e0493293f3a5128fc728dd26d
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 05:04:39 2020 +0200
+
+    Coding Style
+
+commit d2f02fb930b8fa2f9b96d8af8fae992e8785f1ab
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 04:16:11 2020 +0200
+
+    Coding Style
+
+commit c29f8be072cb3f8fcb8a89a208eeb76ae20d86eb
+Author: Arye182 <arye.amsalem@gmail.com>
+Date:   Sun Jan 26 03:53:29 2020 +0200
+
+    Coding Style
+
 commit 3258991c75c77135c882a8e5730ee0f5009b8b6a
 Author: Arye182 <arye.amsalem@gmail.com>
 Date:   Sun Jan 26 03:47:22 2020 +0200
