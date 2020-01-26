@@ -13,7 +13,6 @@ void MyMatrixCacheManager::insertSolution(string problem, string solution) {
   auto hashed = this->hasher(problem);
   string key = to_string(hashed) + ".txt";
   fstream problem_to_insert_file;
-  cout << key << endl;
   lock_cache.try_lock();
   problem_to_insert_file.open(key, ios::out);
   if (!problem_to_insert_file) {
@@ -48,7 +47,6 @@ string MyMatrixCacheManager::findSolution(string problem) {
     }
     lock_cache.unlock();
     return "";
-
   }
 }
 
