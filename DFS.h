@@ -5,7 +5,6 @@
 #ifndef CLIENT_SERVER_COMMUNICATION__DFS_H_
 #define CLIENT_SERVER_COMMUNICATION__DFS_H_
 
-
 #include "Searcher.h"
 #include "Searchable.h"
 #include "SearchableMatrix.h"
@@ -23,19 +22,25 @@ class DFS : public Searcher<T> {
   int nodes_evaluated_counter = 0;
 
  public:
+
   /**
-   *
+   * DCtor.
+   */
+  ~DFS() = default;
+
+  /**
+   * the algorithm DFS
    * @param searchable_obj
    * @return
    */
-  vector<State<T>*> search(Searchable<T> *searchable_obj) {
+  vector<State<T> *> search(Searchable<T> *searchable_obj) {
     SearchableMatrix *m = dynamic_cast<SearchableMatrix *>(searchable_obj);
     // our stack for dfs algorithm
     stack<State<T> *> dfs_stack;
     // list of possible neighbours
-    vector<State<T>*> successors;
+    vector<State<T> *> successors;
     // list of visited
-    vector<State<T>*> visited;
+    vector<State<T> *> visited;
     // start state and goal state
     State<T> *start_state = searchable_obj->getInitialState();
     State<T> *goal_state = searchable_obj->getGoalState();
@@ -48,10 +53,10 @@ class DFS : public Searcher<T> {
     // loop
     while (!dfs_stack.empty()) {
       // pop the next vertex to work on
-      State<T>* element = dfs_stack.top();
+      State<T> *element = dfs_stack.top();
       dfs_stack.pop();
       // check if it was visited
-      for (State<T>* v1 : visited) {
+      for (State<T> *v1 : visited) {
         if (v1->getState() == element->getState()) {
           element->setIsVisited(true);
         }
@@ -64,8 +69,8 @@ class DFS : public Searcher<T> {
       this->nodes_evaluated_counter++;
       // get neighbours
       successors = searchable_obj->getAllPossibleStates(element);
-      for (State<T>* s : successors){
-        for (State<T>* v : visited) {
+      for (State<T> *s : successors) {
+        for (State<T> *v : visited) {
           if (v->getState() == s->getState()) {
             s->setIsVisited(true);
           }
@@ -84,7 +89,7 @@ class DFS : public Searcher<T> {
         }
       }
     }
-    for (State<T>* v : visited) {
+    for (State<T> *v : visited) {
       if (v->getState() == goal_state->getState()) {
         return m->backTracePath(v);
       }
@@ -92,14 +97,12 @@ class DFS : public Searcher<T> {
   }
 
   /**
-   *
+   * getter
    * @return
    */
   int getNumberOfNodesEvaluated() override {
     return this->nodes_evaluated_counter;
   }
 };
-
-
 
 #endif //CLIENT_SERVER_COMMUNICATION__DFS_H_

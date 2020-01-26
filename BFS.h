@@ -25,14 +25,14 @@ class BFS : public Searcher<T> {
    * @param searchable_obj
    * @return
    */
-  vector<State<T>*> search(Searchable<T> *searchable_obj) {
+  vector<State<T> *> search(Searchable<T> *searchable_obj) {
     SearchableMatrix *m = dynamic_cast<SearchableMatrix *>(searchable_obj);
     // our stack for dfs algorithm
     queue<State<T> *> bfs_queue;
     // list of possible neighbours
-    vector<State<T>*> successors;
+    vector<State<T> *> successors;
     // list of visited
-    vector<State<T>*> visited;
+    vector<State<T> *> visited;
     // start state and goal state
     State<T> *start_state = searchable_obj->getInitialState();
     State<T> *goal_state = searchable_obj->getGoalState();
@@ -45,10 +45,9 @@ class BFS : public Searcher<T> {
     // loop
     while (!bfs_queue.empty()) {
       // pop the next vertex to work on
-      State<T>* element = bfs_queue.front();
+      State<T> *element = bfs_queue.front();
       bfs_queue.pop();
-
-      for (State<T>* v1 : visited) {
+      for (State<T> *v1 : visited) {
         if (v1->getState() == element->getState()) {
           element->setIsVisited(true);
         }
@@ -56,16 +55,14 @@ class BFS : public Searcher<T> {
           return m->backTracePath(v1);
         }
       }
-
-
       if (!element->getIsVisited()) {
         element->setIsVisited(true);
         visited.push_back(element);
       }
       this->nodes_evaluated_counter++;
       successors = searchable_obj->getAllPossibleStates(element);
-      for (State<T>* s : successors){
-        for (State<T>* v : visited) {
+      for (State<T> *s : successors) {
+        for (State<T> *v : visited) {
           if (v->getState() == s->getState()) {
             s->setIsVisited(true);
           }
@@ -77,19 +74,24 @@ class BFS : public Searcher<T> {
           bfs_queue.push(s);
           visited.push_back(s);
         }
-        // 3. If n is the goal state,
+        // If n is the goal state,
         if (goal_state->getState() == s->getState()) {
           // backtrace path to n (through recorded parents) and return path.
           return m->backTracePath(s);
         }
       }
     }
-    for (State<T>* v : visited) {
+    for (State<T> *v : visited) {
       if (v->getState() == goal_state->getState()) {
         return m->backTracePath(v);
       }
     }
   }
+
+  /**
+   * DCtor.
+   */
+  ~BFS() = default;
 
   /**
    *
