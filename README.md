@@ -1,6 +1,4 @@
-# Client_Server_Communication - Mile Stone #2
-
-# Project Name : "THE COMMUNICATTOOS V 1.00"
+# Project Name : "Client_Server_Communication"
 
 # Description  
 this is a programm that solves a problem of finding the best path (min cost 
