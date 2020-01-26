@@ -38,6 +38,10 @@ class Server {
    * close the server
    */
   virtual void stop(int socket) = 0;
+  /**
+   * Dtor.
+   */
+  virtual ~Server() = default;
 
 };
 
@@ -75,16 +79,17 @@ namespace boot {
 class Main {
  public:
   static void main(char args[]) {
+    int port = stod(args);
     auto *server = new MyParallelServer();
     auto *f_cm = new MyMatrixCacheManager();
     AStar<Point> *searcher = new AStar<Point>();
     SearcherObjectAdapter *oa = new SearcherObjectAdapter(searcher);
     MyClientHandler *m = new MyClientHandler(reinterpret_cast<Solver<
         SearchableMatrix, string> *>(oa), f_cm);
-    server->open(5600, reinterpret_cast<ClientHandler *>(m));
+    server->open(port, reinterpret_cast<ClientHandler *>(m));
   }
 };
-};
-};
+}
+}
 
 

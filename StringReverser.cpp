@@ -4,6 +4,7 @@
 
 #include "StringReverser.h"
 #include <algorithm>
+
 using namespace std;
  string StringReverser::solve(string str) {
    reverse(str.begin(), str.end());

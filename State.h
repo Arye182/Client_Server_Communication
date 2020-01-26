@@ -27,8 +27,8 @@ class State {
    *
    * @param state
    */
-  State(T state) {
-    this->state = state;
+  State(T state_arg) {
+    this->state = state_arg;
     this->heuristic_cost = 0;
     this->is_visited = false;
     this->came_from = nullptr;

@@ -3,7 +3,15 @@
 # Project Name : "THE COMMUNICATTOOS V 1.00"
 
 # Description  
-this is a programm that....
+this is a programm that solves a problem of finding the best path (min cost 
+ path) in a grid wich is represented by a matrix. 
+ there is a problem of a grid with costs (matrix) every cell is a state 
+  (point) and we need to activate an algorithm of searching problem solver (A
+  -STAR is the best according to an experiment we did). the algorithm will 
+   solve the problem and return a string that specify the exact path you 
+    should do in order to obtain the perfect path. 
+    of course part of the problem is the initial state (begin entry) and the 
+     goal state (end position). 
 
 Programming - Topics we Used:
 -----------------------------
@@ -12,6 +20,10 @@ Programming - Topics we Used:
 * Using Data Structures and DataBase
 * injecting files and data to server and receive as well
 * Multythread Programming
+* Use of design and architecture templates.
+* Comparison, selection and assimilation of algorithms within the system we
+ create.
+* Parallel programming.
 
 
 The Classes (include 2 interfaces):
@@ -27,8 +39,8 @@ The Classes (include 2 interfaces):
 - BestFS
 - AStar
 - State
-- CacheManager
-- FileCacheManager
+- <<CacheManager.h>> Interface
+- MyMatrixCacheManager
 
 **Miri's Classes:**
 - Server.h
@@ -37,19 +49,17 @@ The Classes (include 2 interfaces):
 - ClientHandler.h
 - MyClientHandler
 - MySerialServer
+- MyParallelServer
 - MyTestClientHandler
 - ParalelServer
 - ObjectAdapter
 
 # Installation  
-1. 
-2. 
-3.  
-4. open terminal in a linux system and in the directory of the programm:
-5. type: g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread
-6. 
-7. 
-8. 
+1. open terminal in a linux system and in the directory of the programm:
+2. type:
+ g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor
+ -pedantic -o a.out -pthread
+3. run script of clients and get the solutions!
 
 # Support  
 arye.amsalem@gmail.com  
@@ -72,7 +82,4 @@ All rights reserved for Arye & Miri - no open source in this point.
 Mile Stone #2 - delivered.
 
 # Git Hub Link ~ ~ for instructors 89210
-https://github.com/Arye182/Simulator_Interpreter
-  
-
-
+https://github.com/Arye182/Client_Server_Communication

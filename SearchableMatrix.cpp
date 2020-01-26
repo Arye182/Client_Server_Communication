@@ -47,7 +47,6 @@ vector<State<Point> *> SearchableMatrix::getAllPossibleStates(State<Point> *othe
   Point current_point = other_state->getState();
   int i = current_point.first;
   int j = current_point.second;
-  double current_cost = other_state->getCost();
   int upper_bound = -1;
   int bottom_bound = this->matrix->getRowsNum();
   int left_bound = -1;

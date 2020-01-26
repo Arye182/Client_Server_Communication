@@ -10,5 +10,6 @@ class Solver {
  public:
   virtual Solver *deepCopy() = 0;
   virtual Solution solve(Problem problem) = 0;
+  virtual ~Solver() = default;
 };
 #endif //CLIENT_SERVER_COMMUNICATION__SOLVER_H_
