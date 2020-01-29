@@ -58,6 +58,8 @@ The Classes (include 2 interfaces):
  g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor
  -pedantic -o a.out -pthread
 3. run script of clients and get the solutions!
+4. if you would like to see the empiric test use this code:  
+   test::experiment();
 
 # Support  
 arye.amsalem@gmail.com  
