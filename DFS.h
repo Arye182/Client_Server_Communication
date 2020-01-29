@@ -24,6 +24,15 @@ class DFS : public Searcher<T> {
  public:
 
   /**
+* deep copy implementation for DFS.
+* @return
+*/
+  virtual DFS<T> *deepCopy() override {
+    DFS<T> *copy = new DFS<T>();
+    return copy;
+  }
+
+  /**
    * the algorithm DFS
    * @param searchable_obj
    * @return

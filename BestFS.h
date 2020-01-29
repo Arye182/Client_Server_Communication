@@ -34,6 +34,15 @@ class BestFS : public Searcher<T> {
   };
 
   /**
+ * deep copy implementation for Bestfs.
+ * @return
+ */
+  virtual BestFS<T> *deepCopy() override {
+    BestFS<T> *copy = new BestFS<T>();
+    return copy;
+  }
+
+  /**
    * the algorithm.
    * @param searchable_obj
    * @return the solution (in vector of states)
